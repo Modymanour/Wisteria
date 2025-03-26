@@ -8,7 +8,7 @@ Features
     - The communities are made by the people so the the topics to talk about are endless.
   - Music & Art:
     - The music and art are the main focus of this app So you will be seeing a lot of those
-    - You can appload all you want as long as it doesnt violate any rules
+    - You can upload all you want as long as it doesnt violate any rules
     - The media is open for downloading(unless you don't want yours to be) making it easy for            sharing 
   - Chats:
     - You can privately chat with other or make groups
