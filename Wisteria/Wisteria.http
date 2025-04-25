@@ -1,0 +1,6 @@
+@Wisteria_HostAddress = http://localhost:5139
+
+GET {{Wisteria_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
