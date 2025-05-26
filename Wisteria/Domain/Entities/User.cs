@@ -16,8 +16,8 @@ namespace Wisteria.Domain.Entities
         public string Email { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(30)")]
-        public string Password { get; set; }
+        [Column(TypeName = "varchar(100)")]
+        public string? Password { get; set; }
 
         [Column(TypeName ="nvarchar(200)")]
         public string? Bio { get; set; }
@@ -31,6 +31,8 @@ namespace Wisteria.Domain.Entities
         public List<Posts>? Posts { get; set; } = new List<Posts>();
 
         public List<GroupChat>? groupChats { get; set; } = new List<GroupChat>();
+
+        //public List<User>? Friends { get; set; } = new List<User>();
 
     }
 }

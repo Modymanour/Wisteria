@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wisteria.Domain.Entities;
 
@@ -10,9 +11,11 @@ using Wisteria.Domain.Entities;
 namespace Wisteria.Migrations
 {
     [DbContext(typeof(UserBase))]
-    partial class UserBaseModelSnapshot : ModelSnapshot
+    [Migration("20250526093347_ChangedPasswordLength")]
+    partial class ChangedPasswordLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
