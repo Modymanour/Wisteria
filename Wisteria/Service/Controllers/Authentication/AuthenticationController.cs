@@ -73,12 +73,13 @@ namespace Wisteria.Service.Controllers.Authentication
             string Token = CreateToken(user);
             return Ok(Token);
         }
-        [Authorize]
-        [HttpGet]
-        public ActionResult Authenticated()
-        {
-            return Ok("You are authenticated");
-        }
+        //[Authorize(Roles = "Admin")] //Still under construction and consideration
+        //[HttpGet]
+        //[Route("Admins")]
+        //public ActionResult Authenticated()
+        //{
+        //    return Ok("You are authenticated");
+        //}
         private string CreateToken(User u)
         {
             var claims = new List<Claim>
@@ -86,6 +87,7 @@ namespace Wisteria.Service.Controllers.Authentication
                 new Claim(ClaimTypes.Name,u.Name),
                 new Claim(ClaimTypes.Email,u.Email),
                 new Claim(ClaimTypes.NameIdentifier,u.User_ID.ToString())
+                //new Claim(ClaimTypes.Role,u.Role)
             };
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(_config.GetValue<string>("JwtSettings:Token")!));

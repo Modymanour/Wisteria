@@ -14,6 +14,10 @@ namespace Wisteria.Domain.Entities
         [Required]
         [Column(TypeName = "varchar(40)")]
         public string Email { get; set; }
+        
+        //[Required] Under Construction and consideration
+        //[Column(TypeName = "varchar(40)")]
+        //public string Role { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(100)")]
