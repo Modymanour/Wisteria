@@ -24,40 +24,17 @@ export async function decrypt(token: string){
     })
     return payload;
 }
-export async function login (prevState: any,formData: FormData) {
-    const user = {email: formData.get('Email'),password: formData.get('Password')}
-    const url = "https://localhost:7044/Authentication/Login";
-    try {
-    const res = await fetch(url,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-    });
-    if (!res.ok) throw new Error(`Response status: ${res.status}`);
-
-    const session = await res.json();
-    console.log(session);
+export async function login (prevState: any,data: any) {
     const expires = new Date(Date.now()+10*1000);
-    } catch (error: any) {
-    console.error(error.message);
+    const session = data;
+    (await cookies()).set('session',session,{expires,httpOnly:true})
   }
-    
-}
 
-export async function register(prevState:any,res: Response){
-    try{
-        const session = await res.json(); 
-        console.log(session);
-        const expires = new Date(Date.now()+10*1000);
-        (await cookies()).set('session',session,{expires,httpOnly:true})
-        return "Succesful";
-    }    
-    catch (error: any) {
-    console.error("tragic:",error.message);
-    return error.message;
-  }
+export async function register(prevState: any,data: any){
+    const session = data
+    console.log(session);
+    const expires = new Date(Date.now()+60*60*1000);
+    (await cookies()).set('session',session,{expires,httpOnly:true})
 }
 
 export async function getSession(){
@@ -75,7 +52,7 @@ export async function updateSession(request:NextRequest){
         name:'session',
         value: await encrypt(parsed),
         httpOnly: true,
-        expires: new Date(Date.now() + 10*1000),
+        expires: new Date(Date.now() + 60*60*1000),
     });
     return res;
 }

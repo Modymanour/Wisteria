@@ -58,12 +58,50 @@
     margin-bottom: 20px;
     margin-top: 15px;
 }
+.textRow{
+    display: flex;
+    gap:7px;
+}
 .typeText{
     font-family:monospace;
     color:rgba(0, 0, 0, 0.611);
     font-size:small;
     font-weight: 1000;
     margin-bottom: 7px;
+}
+.errorNameText{
+    font-family:monospace;
+    font-weight: 1000;
+    font-style: italic;
+    color:#501c09;
+    font-size:small;
+    margin-left: 24%;
+}
+.errorEmailText{
+    font-family:monospace;
+    font-weight: 1000;
+    font-style: italic;
+    color:#501c09;
+    font-size:small;
+    margin-left:43%;
+}
+.errorPasswordText{
+    font-family:monospace;
+    font-weight: 1000;
+    font-style: italic;
+    color:#501c09;
+    font-size: xx-small;
+    margin-left:10%;
+    text-align: center;
+    padding:3px;
+}
+.errorConfirmText{
+    font-family:monospace;
+    font-weight: 1000;
+    font-style: italic;
+    color:#501c09;
+    font-size:small;
+    margin-left:8%;
 }
 .typeBox{
     color:black;
@@ -83,7 +121,10 @@
 .typeBox::first-letter{
     background-color: grey;
 }
-
+.passwordText{
+    font-family: sans-serif;
+    font-size: xx-small;
+}
 .registerButton{
     background-color: white;
     margin-top:7%;
