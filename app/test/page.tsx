@@ -3,12 +3,12 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
-  async function register(){
+  async function test(){
     try{
-        const user = {name: 'mody', email:'mody@gmail', password: 'mody_2004'}
-        console.log(user);
-        const url = 'https://localhost:7044/Get/Users';
-        const res = await fetch(url,{method: 'GET'});
+        
+        const url = 'https://localhost:7044/Authentication/Test';
+        const res = await fetch(url,{method: 'Post'});
+        console.log(res)
         if(!res.ok) throw new Error(`Response status: ${res.status}`);
         console.log(res)
         const session = await res.json(); 
@@ -20,7 +20,7 @@ export default function Home() {
     }
   return (
     <div>
-      <form action={register}>
+      <form action={test}>
         <button>Hi</button>
       </form>
     </div>
