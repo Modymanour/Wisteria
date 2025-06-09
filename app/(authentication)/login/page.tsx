@@ -19,13 +19,13 @@ export default function Page(){
         e.preventDefault();
         const form = e.currentTarget;
         const data = new FormData(form);
-        handleRegister(data)
+        handleLogin(data)
     }
-    async function handleRegister(formData: FormData){
+    async function handleLogin(formData: FormData){
         
         try{
                 const user = {email: formData.get('Email')as string,
-                    password:formData.get('Password')as string};
+                    password: formData.get('Password')as string};
                 console.log(user);
                 const url = 'https://localhost:7044/Authentication/Login';
                 const res = await fetch(url,{
@@ -40,9 +40,10 @@ export default function Page(){
                 if (data?.token){
                     emailSet("")
                     passwordSet("")
-                    console.log("Succesful")
+                    console.log("inside")
+                    console.log(data)
                     startTransition(() => loginAction(data.token))
-                    console.log("Success")
+                    console.log(data.token)
                     return
                 }
                 if(data.error === "Email not found"){

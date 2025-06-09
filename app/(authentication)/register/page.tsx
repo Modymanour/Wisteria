@@ -1,7 +1,7 @@
 "use client";
 import "@/app/(authentication)/register.css";
-import W from "@/app/(authentication)/letter-w.png"
-import Redirect from "@/app/(authentication)/right-up.png"
+import W from "@/app/letter-w.png"
+import Redirect from "@/app/(authentication)/right-up.png";
 import Image from "next/image";
 import { register } from "@/app/libs";
 import { redirect } from 'next/dist/server/api-utils';

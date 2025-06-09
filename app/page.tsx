@@ -1,27 +1,15 @@
-'use client';
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
-  async function register(){
-    try{
-        const user = {name: 'mody', email:'mody@gmail', password: 'mody_2004'}
-        console.log(user);
-        const url = 'https://localhost:7044/Get/Users';
-        const res = await fetch(url,{method: 'GET'});
-        if(!res.ok) throw new Error(`Response status: ${res.status}`);
-        console.log(res)
-        const session = await res.json(); 
-        console.log(session);
-      }
-      catch(error){
-        console.log(error)
-      }
-    }
+import { getSession } from "./libs";
+export default async function page() {
+  const session = getSession()
+  console.log(JSON.stringify(session))
   return (
     <div>
-      <form action={register}>
+      <form>
         <button>Hi</button>
+        <button></button>
+        {session && (
+          <div>{JSON.stringify(session,null,2)}</div>
+        )}
       </form>
     </div>
   );

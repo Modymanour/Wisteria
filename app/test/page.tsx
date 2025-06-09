@@ -1,7 +1,9 @@
 'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
-
+import Post from "@/components/ui/Post"
+import NavBar from "@/components/ui/NavBar";
+import "@/app/feed/feed.css"
 export default function Home() {
   async function test(){
     try{
@@ -19,10 +21,12 @@ export default function Home() {
       }
     }
   return (
-    <div>
-      <form action={test}>
-        <button>Hi</button>
-      </form>
-    </div>
+    <>
+      <NavBar />
+      <div className="mansory-grid">
+        <Post />
+      </div>
+      
+    </>
   );
 }
