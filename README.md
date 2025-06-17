@@ -23,3 +23,21 @@ The website is solo developed by Mohamed Mansour and it aims to provide an exper
    - CSS
    - JavaScript
    - React
+
+
+# Pages:
+
+
+## About 
+![About](https://github.com/user-attachments/assets/3b93956f-8d31-4bda-b5fe-1fcefcf46b7a)
+## Feed
+![Feed](https://github.com/user-attachments/assets/7025ae8b-1a07-478f-b087-93be2acd1f65)
+
+## Account
+![Account](https://github.com/user-attachments/assets/c9197904-3df3-4116-8052-4b247e399ec9)
+
+## Sign In
+![Sign In](https://github.com/user-attachments/assets/59ee34df-fea4-49c1-85c4-5fc576e2717c)
+
+## Sign Up
+![Sign Up](https://github.com/user-attachments/assets/aa356590-9f73-4ab7-bb79-51e4e6af7485)
